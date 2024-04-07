@@ -1,0 +1,696 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{	
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	--hue: 240;
+	--back: hls(var(--hue), 16%, 18%);
+    --dark: #34495e;
+	--light: #ffffff;
+	--error: #e24d4c;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+  background: black;
+  color: #fff;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+.main{
+	margin-top: 30px;
+	padding: 7px;
+	display: flex;
+	justify-content: center;
+}
+
+
+/*====-BTON-====*/
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-left: 10px;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: 'Avalors Personal Use';
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1)
+}
+
+.btn:active {
+  border: double 4px #FE53BB;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #FE53BB;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/*====-İNPUT-====*/
+
+.main{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-container {
+  width: 500px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #0F172A;
+  padding: 10px 15px;
+  gap: 5px;
+  border-radius: 20px;
+}
+
+.input-container .bash-text {
+  font-size: .8rem;
+  color: white;
+}
+
+.input-container .bash-text .user {
+  color: #E879F9;
+}
+
+.input-container .bash-text .vm {
+  color: #2DD4BF;
+}
+
+.input-container .bash-text .char {
+  color: #A78BFA;
+}
+
+.input-container input[type=text].inputs {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  height: 140%;
+}
+
+.btn{
+  margin-top: 7px;
+}
+
+/*====-ALERT-====*/
+.notifications{
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	top: 30px;
+	right: 20px;
+	color: #222;
+	height: 200px;
+	width: ;
+}
+
+.notifications :where(.toast, .column) {
+	display: flex;
+	align-items: center;
+}
+.notifications .toast{
+	width: 450px;/*ALERT BOY AYARI*/
+	position: relative;
+	overflow: hidden;
+	height: 60px;
+	list-style: none;
+	border-radius: 4px;
+	padding: 16px 17px;
+	margin-bottom: 10px;
+	background: var(--light);
+	justify-content: space-between;
+	animation: show_toasr 0.3s ease forwards;
+}
+
+@keyframes show_toasr {
+	0%{
+		transform: translateX(100%) ;
+	}
+	
+	40%{
+		transform: translateX(-5%) ;
+	}
+	
+	0%{
+		transform: translateX(0%) ;
+	}
+	
+	0%{
+		transform: translateX(-10px) ;
+	}
+}
+
+.toast::before{
+	position: absolute;
+	content: "";
+	height: 3px;
+	width: 100%;
+	bottom: 0;
+	left: 0px;
+	background: var(--error);
+	animation: progress 5s linear forwards;
+}
+
+@keyframes progress{
+	100% {
+		width: 0%;
+	}
+}
+
+.toast .column i{
+	font-size: 1.07rem;
+}
+
+
+
+.toast .column span{
+	font-size: 1.07rem;
+	margin-left: 12px;
+}
+
+.toast i:last-child{
+	color: #aeb0d7;
+	cursor: pointer;
+}
+
+.toast i:last-child:hover{
+	color: black;
+}
+
+.toast .column i{
+	font-size: 1.4rem;
+	color: var(--error);
+}
+
+.alertDiv {
+  display: none;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.alertDiv.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*=============== BLOG CSS ===============*/
+.blog{
+	margin: 5px;
+}
+.blog_banner{
+	margin-top: 23%;
+	display: flex;
+	justify-content: center;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Kartlar sığmadığında alt satıra geçmesini sağlar */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Kartlar sığmadığında alt satıra geçmesini sağlar */
+}
+
+/*====-BLOG KARTI-====*/
+.card {
+    width: 300px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+	cursor: pointer;
+	justify-content: center;
+	position: relative;
+    
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 10px;
+	overflow: hidden;
+}
+
+.card-content h2 {
+    font-size: 16px;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Başlık metninin taşması durumunda kırpma işlemi */
+    white-space: nowrap; /* Başlık metninin bir satıra sığmasını sağlar */
+	margin-bottom: 7px;
+}
+
+
+.card-content h2 {
+    font-size: 16px;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Başlık metninin taşması durumunda kırpma işlemi */
+    white-space: nowrap; /* Başlık metninin bir satıra sığmasını sağlar */
+}
+
+.name{
+	color: #ff7f00;
+}
+
+
+		/*====-BLOG İMG-====*/
+.image-container {
+    max-height: 300px; /* Resmin maksimum yüksekliği */
+    overflow: hidden;
+}
+
+
+	/*====-BLOG SEARCH-====*/
+.input {
+  width: 450px;
+  margin: 5px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 50px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+.sideboy{
+	display: flex;
+	justify-content: center;
+	margin: 5px;
+}
+
+input:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+input:hover {
+  outline: 1px solid lightgrey;
+}
+
+
+
+/*====-LOADER-====*/
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Siyah yarı saydam bir arka plan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Diğer öğelerin üstünde */
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.loader-container{
+	background-color: #000;
+}
+
+.loader {
+  position: relative;
+}
+
+.loader span {
+  position: absolute;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  letter-spacing: 5px;
+}
+
+.loader span:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 0.4px #fff;
+}
+
+.loader span:nth-child(2) {
+  color: #ff7f00;
+  -webkit-text-stroke: 1px #ff7f00;
+  animation: trendburada11 3s ease-in-out infinite;
+}
+
+@keyframes trendburada11{
+  0%, 100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 
+     54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 
+     51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+
+
+
+/* 
+  ##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)
+  ##Ekran = 481px to 767px Arası Ekranlar
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+	.card {
+        width: calc(50% - 40px);
+    }
+  
+  .notifications .toast{
+	width: 400px;
+  }
+  
+  .btn{
+	width: 40%;
+	position: relative;
+	left: 10px;
+  }
+  
+  
+  .input-container .bash-text {
+      font-size: 16px;
+  }
+  
+  .ads{
+	  width: 95%;
+      top: 250px;
+}
+  
+  .main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-container {
+	 margin-right: 100px;
+	width: 100%;
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: 0;
+    order: 2;
+  }
+  
+  .loader span{
+	  font-size: 20px;
+  }
+}
+
+/* 
+  ##Cihaz = En Çok Tercih Edilen Mobil Boyutlar (Portrait/Dikey Modda)
+  ##Ekran = 320px to 479px Arası Ekranlar
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .card {
+        display: flex;
+		flex-direction: column;justify-content: center;
+	position: relative;
+    }
+	
+	
+	.input {
+		width: 300px;
+	}
+	.notifications .toast{
+		left: 20px;
+		width:90%;
+	}
+	.toast .column span{
+	font-size: 0.70rem;
+}
+	
+	.main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-container {
+	 margin-right: 100px;
+	width: 100%;
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: 0;
+    order: 2;
+	width: 40%;
+	font-size: 10px;
+  }
+  
+  .button{
+	  margin-right: 50%;
+	  width: 200px;
+	  display: flex;
+	  box-sizing: border-box; /* Butonun içerik kutusu dahilinde boyutlanmasını sağlar */
+  }
+  
+  .loader span{
+	 font-size: 16px;
+  }
+  
+}
+
+
+
+
+/* 
+  ##Cihaz = Masaüstü
+  ##Ekran = 1281px 'den yüksek çözünürlükler için
+*/
+@media (min-width: 1281px) {
+	/*====-CSS-====*/
+}
+
+/* 
+  ##Cihaz = Laptoplar, Masaüstü
+  ##Ekran = 1025px to 1280px Arası Ekranlar
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	/*====-CSS-====*/
+}
+
+/* 
+  ##Cihaz = Tabletler, Ipad (portrait/dikey modda)
+  ##Ekran = 768px to 1024px Arası Ekranlar
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*====-CSS-====*/
+}
+
+/* 
+  ##Cihaz = Tabletler, Ipad (landscape/yatay modda)
+  ##Ekran = 768px to 1024px Arası Ekranlar
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /*====-CSS-====*/
+}
