@@ -4,8 +4,8 @@ document.getElementById('btn').addEventListener('click', function() {
   const inputValue = inputField.value.trim();
   const alertDiv = document.getElementById('alert');
 
-  if (inputValue === '1') {
-    window.open('https://www.google.com/', '_blank');
+  if (inputValue === '8917') {
+    window.open('https://www.n11.com/urun/rampage-ally-k11-12-isik-modlu-red-switch-mekanik-antighosting-bilek-destekli-oyuncu-klavye-44056679?magaza=7-24siparis', '_blank');
   } else if (inputValue === '2') {
     window.open('https://www.microsoft.com/', '_blank');
   } else {
